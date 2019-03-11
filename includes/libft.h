@@ -6,7 +6,7 @@
 /*   By: gwyman-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/02 17:52:20 by gwyman-m          #+#    #+#             */
-/*   Updated: 2019/02/27 17:25:29 by gwyman-m         ###   ########.fr       */
+/*   Updated: 2019/03/11 18:46:46 by gwyman-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ typedef struct		s_list
 
 # define BUFF_SIZE 100
 
+size_t				ft_countchars(char const *s, char c);
 int					get_next_line(const int fd, char **line);
 long				ft_strcpy_whilech(char **dst, char *src, char c);
 char				*ft_itoa_base(size_t n, int osn);
