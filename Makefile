@@ -25,21 +25,23 @@ ft_strjoin.c ft_strlcat.c ft_strlen.c ft_strmap.c ft_strmapi.c ft_strncat.c \
 ft_strncmp.c ft_strncpy.c ft_strnequ.c ft_strnew.c ft_strnstr.c ft_strrchr.c \
 ft_strsplit.c ft_strstr.c ft_strsub.c ft_strtrim.c ft_tolower.c ft_toupper.c \
 ft_lstsplit.c ft_numlen.c ft_countwords.c ft_itoa_base.c ft_strrejoin.c \
-ft_strcpy_whilech.c get_next_line.c
+ft_strcpy_whilech.c get_next_line.c ft_countchars.c ft_strchrpos.c
 
 OFILES=$(CFILES:%.c=%.o)
 
 all: $(NAME)
 
-$(NAME):
-	gcc $(FLAGS) $(CFILES)
+$(NAME): $(OFILES)
 	ar rc libft.a $(OFILES)
 	ranlib libft.a
 
+$(OFILES): $(CFILES)
+	gcc $(FLAGS) $(CFILES)
+
 clean:
-	rm -Rfv $(OFILES)
+	rm -fv $(OFILES)
 
 fclean: clean
-	rm -Rfv libft.a
+	rm -fv libft.a
 
 re: fclean all
