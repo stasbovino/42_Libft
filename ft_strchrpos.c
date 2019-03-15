@@ -1,35 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sqrt.c                                          :+:      :+:    :+:   */
+/*   ft_strchrpos.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gwyman-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/13 15:14:15 by gwyman-m          #+#    #+#             */
-/*   Updated: 2019/03/13 15:56:22 by gwyman-m         ###   ########.fr       */
+/*   Created: 2019/03/15 14:22:16 by gwyman-m          #+#    #+#             */
+/*   Updated: 2019/03/15 14:23:37 by gwyman-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_sqrt(size_t nb, int opt)
+size_t		ft_strchrpos(char const *s, char c)
 {
-	size_t	i;
+	size_t i;
 
 	i = 0;
-	while (i < nb / 2)
-	{
-		if (i * i < nb && (i + 1) * (i + 1) > nb)
-		{
-			if (opt == -1)
-				return (i);
-			else
-				return (i + 1);
-		}
-		else
-			if (i * i == nb)
-				return (i);
+	while (s[i] && s[i] != c)
 		i++;
-	}
-	return (0);
+	return (i);
 }

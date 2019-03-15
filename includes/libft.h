@@ -6,7 +6,7 @@
 /*   By: gwyman-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/02 17:52:20 by gwyman-m          #+#    #+#             */
-/*   Updated: 2019/03/13 15:15:16 by gwyman-m         ###   ########.fr       */
+/*   Updated: 2019/03/15 14:20:07 by gwyman-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ typedef struct		s_list
 
 # define BUFF_SIZE 100
 
+size_t				ft_strchrpos(char const *s, char c);
 size_t				ft_sqrt(size_t nb, int opt);
 size_t				ft_countchars(char const *s, char c);
 int					get_next_line(const int fd, char **line);
