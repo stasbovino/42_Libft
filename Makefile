@@ -6,7 +6,7 @@
 #    By: gwyman-m <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/02 17:48:56 by gwyman-m          #+#    #+#              #
-#    Updated: 2019/03/15 17:26:13 by gwyman-m         ###   ########.fr        #
+#    Updated: 2019/03/17 16:14:03 by gwyman-m         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,15 +31,17 @@ OFILES=$(CFILES:%.c=%.o)
 
 all: $(NAME)
 
-$(NAME):
-	gcc $(FLAGS) $(CFILES)
+$(NAME): $(OFILES)
 	ar rc libft.a $(OFILES)
 	ranlib libft.a
 
+$(OFILES): $(CFILES)
+	gcc $(FLAGS) $(CFILES)
+
 clean:
-	rm -f $(OFILES)
+	rm -fv $(OFILES)
 
 fclean: clean
-	rm -f libft.a
+	rm -fv libft.a
 
 re: fclean all

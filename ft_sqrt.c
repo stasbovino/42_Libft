@@ -17,7 +17,7 @@ size_t	ft_sqrt(size_t nb, int opt)
 	size_t	i;
 
 	i = 0;
-	while (i < nb / 2)
+	while (1)
 	{
 		if (i * i < nb && (i + 1) * (i + 1) > nb)
 		{
