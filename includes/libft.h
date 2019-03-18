@@ -6,7 +6,7 @@
 /*   By: gwyman-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/02 17:52:20 by gwyman-m          #+#    #+#             */
-/*   Updated: 2019/03/15 14:20:07 by gwyman-m         ###   ########.fr       */
+/*   Updated: 2019/03/18 21:02:29 by gwyman-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,15 @@ typedef struct		s_list
 	struct s_list	*next;
 }					t_list;
 
+typedef struct		s_coord
+{
+	int				x;
+	int				y;
+}					t_coord;
 # define BUFF_SIZE 100
 
+t_coord				*ft_create_coords(int x, int y);
+void				ft_get_coords(t_coord *dst, int x, int y);
 size_t				ft_strchrpos(char const *s, char c);
 size_t				ft_sqrt(size_t nb, int opt);
 size_t				ft_countchars(char const *s, char c);
@@ -63,6 +70,8 @@ char				*ft_strstr(const char *haystack,
 char				*ft_strnstr(const char *haystack,
 		const char *needle, size_t len);
 int					ft_atoi(const char *str);
+int					ft_islower(int c);
+int					ft_isupper(int c);
 int					ft_isalpha(int c);
 int					ft_isdigit(int c);
 int					ft_isalnum(int c);
