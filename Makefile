@@ -6,7 +6,7 @@
 #    By: gwyman-m <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/02 17:48:56 by gwyman-m          #+#    #+#              #
-#    Updated: 2019/03/18 20:51:24 by gwyman-m         ###   ########.fr        #
+#    Updated: 2019/03/21 18:22:26 by gwyman-m         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,7 @@ OFILES=$(CFILES:%.c=%.o)
 
 all: $(NAME)
 
-$(NAME): $(OFILES)
+$(NAME): $(OFILES) includes/libft.h
 	ar rc libft.a $(OFILES)
 	ranlib libft.a
 

@@ -6,7 +6,7 @@
 /*   By: gwyman-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/02 17:52:20 by gwyman-m          #+#    #+#             */
-/*   Updated: 2019/03/18 21:02:29 by gwyman-m         ###   ########.fr       */
+/*   Updated: 2019/03/21 18:22:52 by gwyman-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ typedef struct		s_coord
 	int				x;
 	int				y;
 }					t_coord;
+
 # define BUFF_SIZE 100
 
 t_coord				*ft_create_coords(int x, int y);
