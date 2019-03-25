@@ -6,7 +6,7 @@
 /*   By: gwyman-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/21 19:36:13 by gwyman-m          #+#    #+#             */
-/*   Updated: 2019/03/21 20:03:58 by gwyman-m         ###   ########.fr       */
+/*   Updated: 2019/03/25 17:15:24 by gwyman-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,7 @@ static size_t	ft_joinlen(char const *s1, char const *s2)
 	return (len1 + len2);
 }
 
-
-char		*ft_strpaste(char *from, char *to, size_t place)
+char			*ft_strpaste(char *from, char *to, size_t place)
 {
 	size_t	i;
 	char	*result;
