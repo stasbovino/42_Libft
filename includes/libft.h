@@ -6,7 +6,7 @@
 /*   By: gwyman-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/02 17:52:20 by gwyman-m          #+#    #+#             */
-/*   Updated: 2019/03/21 18:22:52 by gwyman-m         ###   ########.fr       */
+/*   Updated: 2019/03/25 22:45:22 by gwyman-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ typedef struct		s_coord
 
 # define BUFF_SIZE 100
 
+char				*ft_strtrim_all(char const *s);
 t_coord				*ft_create_coords(int x, int y);
 void				ft_get_coords(t_coord *dst, int x, int y);
 size_t				ft_strchrpos(char const *s, char c);

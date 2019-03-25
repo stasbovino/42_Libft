@@ -6,7 +6,7 @@
 #    By: gwyman-m <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/02 17:48:56 by gwyman-m          #+#    #+#              #
-#    Updated: 2019/03/21 18:22:26 by gwyman-m         ###   ########.fr        #
+#    Updated: 2019/03/25 22:45:01 by gwyman-m         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ ft_strncmp.c ft_strncpy.c ft_strnequ.c ft_strnew.c ft_strnstr.c ft_strrchr.c \
 ft_strsplit.c ft_strstr.c ft_strsub.c ft_strtrim.c ft_tolower.c ft_toupper.c \
 ft_lstsplit.c ft_numlen.c ft_countwords.c ft_itoa_base.c ft_strrejoin.c \
 ft_strcpy_whilech.c get_next_line.c ft_countchars.c ft_strchrpos.c ft_sqrt.c \
-ft_get_coords.c ft_isupper.c ft_islower.c ft_create_coords.c
+ft_get_coords.c ft_isupper.c ft_islower.c ft_create_coords.c ft_strtrim_all.c
 
 OFILES=$(CFILES:%.c=%.o)
 
