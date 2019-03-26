@@ -6,12 +6,11 @@
 /*   By: gwyman-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/30 16:56:43 by gwyman-m          #+#    #+#             */
-/*   Updated: 2019/03/25 23:33:17 by gwyman-m         ###   ########.fr       */
+/*   Updated: 2019/03/26 23:34:28 by gwyman-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static char	*recording(char const *s, size_t words, char *a)
 {
@@ -48,7 +47,6 @@ char		*ft_strtrim_all(char const *s)
 	i = 0;
 	k = ft_strlen(s);
 	words = ft_countwords(s);
-	printf("!%s!\nwords are %ld\n", s, words);
 	while (s[++i])
 		if (s[n] == 32 || s[n] == '\n' || s[n] == '\t')
 			n++;
