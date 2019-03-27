@@ -6,7 +6,7 @@
 /*   By: gwyman-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/30 16:56:43 by gwyman-m          #+#    #+#             */
-/*   Updated: 2019/03/26 23:34:28 by gwyman-m         ###   ########.fr       */
+/*   Updated: 2019/03/27 17:00:45 by gwyman-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,10 +50,10 @@ char		*ft_strtrim_all(char const *s)
 	while (s[++i])
 		if (s[n] == 32 || s[n] == '\n' || s[n] == '\t')
 			n++;
-	if (k >= n)
+	if (k - n + words - 1 > 0)
 		a = ft_strnew(k - n + words - 1);
 	else
-		a = ft_strnew(1);
+		a = ft_strnew(0);
 	if (!a)
 		return (NULL);
 	a = recording(s, words, a);
