@@ -48,7 +48,7 @@ char		*ft_strtrim_all(char const *s)
 	k = ft_strlen(s);
 	words = ft_countwords(s);
 	while (s[++i])
-		if (s[n] == 32 || s[n] == '\n' || s[n] == '\t')
+		if (s[i] == 32 || s[i] == '\n' || s[i] == '\t')
 			n++;
 	if (k - n + words - 1 > 0)
 		a = ft_strnew(k - n + words - 1);
