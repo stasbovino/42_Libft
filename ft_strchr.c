@@ -6,7 +6,7 @@
 /*   By: gwyman-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/30 11:32:42 by gwyman-m          #+#    #+#             */
-/*   Updated: 2019/02/19 17:06:23 by gwyman-m         ###   ########.fr       */
+/*   Updated: 2019/04/04 14:20:47 by gwyman-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_strchr(const char *s, int c)
 {
 	char *a;
 
-	if (!s) 
+	if (!s)
 		return (NULL);
 	a = (char*)s;
 	while (*a)

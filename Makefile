@@ -6,7 +6,7 @@
 #    By: gwyman-m <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/02 17:48:56 by gwyman-m          #+#    #+#              #
-#    Updated: 2019/03/25 22:45:01 by gwyman-m         ###   ########.fr        #
+#    Updated: 2019/04/04 14:21:07 by gwyman-m         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,7 @@ $(NAME): $(OFILES) includes/libft.h
 	ar rc libft.a $(OFILES)
 	ranlib libft.a
 
-$(OFILES): $(CFILES)
+$(OFILES): $(CFILES) includes/libft.h
 	gcc $(FLAGS) $(CFILES)
 
 clean:
