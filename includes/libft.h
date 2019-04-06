@@ -66,6 +66,8 @@ char				*ft_strcat(char *s1, const char *s2);
 char				*ft_strncat(char *s1, const char *s2, size_t n);
 size_t				ft_strlcat(char *dst, const char *src, size_t size);
 char				*ft_strchr(const char *s, int c);
+void				ft_strchr_replace(char *s, int old, int new);
+void				ft_strchr_swap(char **s, int a, int b);
 char				*ft_strrchr(const char *s, int c);
 char				*ft_strstr(const char *haystack,
 		const char *needle);
