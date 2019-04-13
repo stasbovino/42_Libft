@@ -6,7 +6,7 @@
 /*   By: gwyman-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/19 17:20:45 by gwyman-m          #+#    #+#             */
-/*   Updated: 2019/02/27 17:26:37 by gwyman-m         ###   ########.fr       */
+/*   Updated: 2019/04/14 00:24:23 by gwyman-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ int		read_line(char **content, const int fd, int full)
 	return (1);
 }
 
-int		cleaning(t_list **cell, const int fd)
+int		cleaning(t_list **cell, const int fd, char **line)
 {
 	t_list	*tmp;
 	t_list	*prev;
@@ -104,7 +104,11 @@ int		cleaning(t_list **cell, const int fd)
 		*cell = NULL;
 	free(tmp);
 	if (len == 0)
+	{
+		free(*line);
+		line = NULL;
 		return (0);
+	}
 	return (-1);
 }
 
@@ -117,20 +121,19 @@ int		get_next_line(const int fd, char **line)
 	if (!line || (fd < 0) || (read_line(NULL, fd, 0) < 0))
 		return (-1);
 	if (!(current = find_fd(fd, &cell, 0)))
-		return (cleaning(&cell, fd));
-	if (!(*line = ft_strnew(0)))
-		return (cleaning(&cell, fd));
+		return (cleaning(&cell, fd, line));
+	*line = NULL;
 	if (!ft_strchr(current->content, '\n'))
 		if ((read_line((char**)&(current->content), fd, 1)) == -1)
-			return (cleaning(&cell, fd));
+			return (cleaning(&cell, fd, line));
 	if (!ft_strlen(current->content))
-		return (cleaning(&cell, fd));
+		return (cleaning(&cell, fd, line));
 	if ((i = ft_strcpy_whilech(line, current->content, '\n')) == -1)
-		return (cleaning(&cell, fd));
+		return (cleaning(&cell, fd, line));
 	if ((size_t)i < ft_strlen(current->content))
 	{
 		if ((move_line((char**)&(current->content), i)) == -1)
-			return (cleaning(&cell, fd));
+			return (cleaning(&cell, fd, line));
 	}
 	else
 		ft_strclr(current->content);
