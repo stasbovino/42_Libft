@@ -6,7 +6,7 @@
 /*   By: gwyman-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/01 20:24:30 by gwyman-m          #+#    #+#             */
-/*   Updated: 2018/12/12 01:32:32 by gwyman-m         ###   ########.fr       */
+/*   Updated: 2019/04/17 14:11:59 by gwyman-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,24 +16,20 @@ static int		ft_length(long n)
 {
 	int		len;
 
-	len = 1;
+	len = 0;
 	if (n < 0)
 	{
 		len++;
 		n *= -1;
 	}
-	while (n > 9)
-	{
-		n /= 10;
-		len++;
-	}
+	len += ft_numlen(n);
 	return (len);
 }
 
 char			*ft_itoa(int n)
 {
 	char	*a;
-	int		len;
+	long	len;
 	long	nb;
 
 	nb = n;

@@ -6,18 +6,18 @@
 /*   By: gwyman-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/12 05:09:56 by gwyman-m          #+#    #+#             */
-/*   Updated: 2018/12/13 06:17:03 by gwyman-m         ###   ########.fr       */
+/*   Updated: 2019/04/17 15:04:22 by gwyman-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static long			ft_length(size_t n, int osn)
+static long			ft_length(long n, int osn)
 {
 	long	len;
 
 	len = 1;
-	while (n > (size_t)(osn - 1))
+	while (n > (osn - 1))
 	{
 		n /= osn;
 		len++;
@@ -25,18 +25,25 @@ static long			ft_length(size_t n, int osn)
 	return (len);
 }
 
-char				*ft_itoa_base(size_t n, int osn)
+char				*ft_itoa_base(long n, int osn)
 {
 	char	*a;
 	long	len;
+	int		end;
 
 	if (osn > 16 || osn < 2)
 		return ("0");
-	len = ft_length(n, osn);
+	if (n == -9223372036854775807 - 1)
+		return ("-9223372036854775808");
+	len = (n < 0) ? 1 : 0;
+	end = (n < 0) ? 1 : 0;
+	len += ft_length(n, osn);
 	if (!(a = (char*)malloc(sizeof(char) * (len + 1))))
 		return (NULL);
 	a[len] = '\0';
-	while (--len >= 0)
+	if (end == 1)
+		a[0] = '-';
+	while (--len >= end)
 	{
 		if (n % osn > 9)
 			a[len] = n % osn + 'A' - 10;
