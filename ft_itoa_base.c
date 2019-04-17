@@ -6,7 +6,7 @@
 /*   By: gwyman-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/12 05:09:56 by gwyman-m          #+#    #+#             */
-/*   Updated: 2019/04/17 23:02:39 by gwyman-m         ###   ########.fr       */
+/*   Updated: 2019/04/17 23:06:32 by gwyman-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,13 @@ static long			ft_length(long n, int osn)
 	return (len);
 }
 
-char				*ft_itoa_base(long n, int osn, int case)
+char				*ft_itoa_base(long n, int osn, int opt)
 {
 	char	*a;
 	long	len;
 	int		end;
 
-	if (osn > 16 || osn < 2 || case < 0 || case > 1)
+	if (osn > 16 || osn < 2 || opt < 0 || opt > 1)
 		return ("0");
 	if (n == -9223372036854775807 - 1)
 		return ("-9223372036854775808");
@@ -46,7 +46,7 @@ char				*ft_itoa_base(long n, int osn, int case)
 	while (--len >= end)
 	{
 		if (n % osn > 9)
-			a[len] = (case == 1) ? n % osn + 'A' - 10 : n % osn + 'a' - 10;
+			a[len] = (opt == 1) ? n % osn + 'A' - 10 : n % osn + 'a' - 10;
 		else
 			a[len] = n % osn + '0';
 		n /= osn;

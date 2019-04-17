@@ -6,7 +6,7 @@
 /*   By: gwyman-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/02 17:52:20 by gwyman-m          #+#    #+#             */
-/*   Updated: 2019/04/17 14:13:20 by gwyman-m         ###   ########.fr       */
+/*   Updated: 2019/04/17 23:06:05 by gwyman-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ size_t				ft_sqrt(size_t nb, int opt);
 size_t				ft_countchars(char const *s, char c);
 int					get_next_line(const int fd, char **line);
 long				ft_strcpy_whilech(char **dst, char *src, char c);
-char				*ft_itoa_base(long n, int osn);
+char				*ft_itoa_base(long n, int osn, int opt);
 size_t				ft_countwords(char const *s);
 size_t				ft_numlen(size_t num);
 t_list				*ft_lstsplit(char const *s, char c);
