@@ -6,13 +6,13 @@
 /*   By: gwyman-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/19 17:20:45 by gwyman-m          #+#    #+#             */
-/*   Updated: 2019/04/14 00:24:23 by gwyman-m         ###   ########.fr       */
+/*   Updated: 2019/04/17 22:48:47 by gwyman-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*find_fd(const int fd, t_list **cell, int check)
+static t_list	*find_fd(const int fd, t_list **cell, int check)
 {
 	t_list			*tmp;
 
@@ -35,7 +35,7 @@ t_list	*find_fd(const int fd, t_list **cell, int check)
 	return (tmp);
 }
 
-int		move_line(char **s, size_t i)
+static int		move_line(char **s, size_t i)
 {
 	char	*tmp;
 	size_t	len;
@@ -58,7 +58,7 @@ int		move_line(char **s, size_t i)
 	return (1);
 }
 
-int		read_line(char **content, const int fd, int full)
+static int		read_line(char **content, const int fd, int full)
 {
 	int			r;
 	char		buffer[BUFF_SIZE + 1];
@@ -83,7 +83,7 @@ int		read_line(char **content, const int fd, int full)
 	return (1);
 }
 
-int		cleaning(t_list **cell, const int fd, char **line)
+static int		cleaning(t_list **cell, const int fd, char **line)
 {
 	t_list	*tmp;
 	t_list	*prev;
