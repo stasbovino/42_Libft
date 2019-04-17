@@ -6,7 +6,7 @@
 /*   By: gwyman-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/01 18:16:48 by gwyman-m          #+#    #+#             */
-/*   Updated: 2018/12/12 23:14:08 by gwyman-m         ###   ########.fr       */
+/*   Updated: 2019/04/17 22:36:19 by gwyman-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ static int		writeword(char const *s, char **a, size_t i, size_t len)
 			ft_strdel(&a[k]);
 			k++;
 		}
+		free(a);
 		return (0);
 	}
 	k = 0;
@@ -72,8 +73,9 @@ char			**ft_strsplit(char const *s, char c)
 
 	nb = 0;
 	count = countwords(s, c);
-	if (count == -1 || !(a = (char**)malloc(sizeof(char*) * (count + 1))) ||
-			!(a[count] = (char*)malloc(sizeof(char))))
+	if (count == -1)
+		return (NULL);
+	if (!(a = (char**)malloc(sizeof(char*) * (count + 1))))
 		return (NULL);
 	i = 0;
 	a[count] = NULL;
