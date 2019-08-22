@@ -6,7 +6,7 @@
 /*   By: gwyman-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/15 13:09:59 by gwyman-m          #+#    #+#             */
-/*   Updated: 2019/08/20 14:34:22 by gwyman-m         ###   ########.fr       */
+/*   Updated: 2019/08/22 20:43:44 by sts              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,8 @@ char		*bits_div(char *bits, t_options *opt, int dcase)
 	char	*exp;
 	char	*mant;
 	char	*num;
-	int		i;
 	int		exp_int;
 
-	i = -1;
 	exp = ft_strnew(0);
 	mant = ft_strnew(0);
 	create_exp_and_mant(bits, dcase, &exp, &mant);

@@ -6,7 +6,7 @@
 /*   By: gwyman-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/11 19:25:19 by gwyman-m          #+#    #+#             */
-/*   Updated: 2019/08/20 14:34:26 by gwyman-m         ###   ########.fr       */
+/*   Updated: 2019/08/22 20:44:52 by sts              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,7 @@ char	*ft_itoa_sizet(size_t nb, size_t base, int uppercase)
 {
 	char	*a;
 	int		len;
-	int		i;
 
-	i = 0;
 	len = 0;
 	len = length(nb, base);
 	a = ft_strnew(len);
