@@ -6,7 +6,7 @@
 /*   By: gwyman-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/19 17:20:45 by gwyman-m          #+#    #+#             */
-/*   Updated: 2019/04/17 22:48:47 by gwyman-m         ###   ########.fr       */
+/*   Updated: 2019/08/30 15:19:14 by sts              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,7 @@ static int		cleaning(t_list **cell, const int fd, char **line)
 	else
 		*cell = NULL;
 	free(tmp);
-	if (len == 0)
+	if (len == 0 && line)
 	{
 		free(*line);
 		line = NULL;
@@ -112,12 +112,14 @@ static int		cleaning(t_list **cell, const int fd, char **line)
 	return (-1);
 }
 
-int		get_next_line(const int fd, char **line)
+int		get_next_line(const int fd, char **line, int clean)
 {
 	static t_list	*cell;
 	long			i;
 	t_list			*current;
 
+	if (clean == 1)
+		return (cleaning(&cell, fd, line));
 	if (!line || (fd < 0) || (read_line(NULL, fd, 0) < 0))
 		return (-1);
 	if (!(current = find_fd(fd, &cell, 0)))

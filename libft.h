@@ -6,7 +6,7 @@
 /*   By: gwyman-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/02 17:52:20 by gwyman-m          #+#    #+#             */
-/*   Updated: 2019/08/20 14:31:10 by gwyman-m         ###   ########.fr       */
+/*   Updated: 2019/08/30 15:13:09 by sts              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void				ft_get_coords(t_coord *dst, int x, int y);
 size_t				ft_strchrpos(char const *s, char c);
 size_t				ft_sqrt(size_t nb, int opt);
 size_t				ft_countchars(char const *s, char c);
-int					get_next_line(const int fd, char **line);
+int					get_next_line(const int fd, char **line, int clean);
 long				ft_strcpy_whilech(char **dst, char *src, char c);
 char				*ft_itoa_base(long n, int osn, int opt);
 size_t				ft_countwords(char const *s);
