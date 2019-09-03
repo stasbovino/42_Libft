@@ -6,13 +6,15 @@
 #    By: gwyman-m <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/02 17:48:56 by gwyman-m          #+#    #+#              #
-#    Updated: 2019/08/20 16:42:31 by gwyman-m         ###   ########.fr        #
+#    Updated: 2019/09/03 17:49:50 by gwyman-m         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME=libft.a
 
 FLAGS = -Wall -Wextra -Werror -c -I.
+
+HEADER = libft.h
 
 PRINTFSRC_DIR=printfsrc/
 
@@ -52,7 +54,7 @@ $(NAME): $(OFILES)
 	ar rc libft.a $(OFILES)
 	ranlib libft.a
 
-$(OFILES): $(CFILES) libft.h
+$(OFILES): $(CFILES) $(HEADER)
 	gcc $(FLAGS) $(CFILES)
 
 clean:
