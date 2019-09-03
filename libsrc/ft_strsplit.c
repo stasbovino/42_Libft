@@ -6,7 +6,7 @@
 /*   By: gwyman-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/01 18:16:48 by gwyman-m          #+#    #+#             */
-/*   Updated: 2019/04/17 22:36:19 by gwyman-m         ###   ########.fr       */
+/*   Updated: 2019/09/03 16:40:41 by gwyman-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ char			**ft_strsplit(char const *s, char c)
 	char	**a;
 	size_t	start;
 
-	nb = 0;
+	nb = -1;
 	count = countwords(s, c);
 	if (count == -1)
 		return (NULL);
@@ -79,7 +79,7 @@ char			**ft_strsplit(char const *s, char c)
 		return (NULL);
 	i = 0;
 	a[count] = NULL;
-	while (s[i] && nb < count)
+	while (s[i] && ++nb < count)
 	{
 		while (s[i] && s[i] == c)
 			i++;
@@ -88,7 +88,6 @@ char			**ft_strsplit(char const *s, char c)
 			i++;
 		if (!writeword(s + start, a, nb, i - start))
 			return (NULL);
-		nb++;
 	}
 	return (a);
 }

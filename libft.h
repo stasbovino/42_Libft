@@ -6,7 +6,7 @@
 /*   By: gwyman-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/02 17:52:20 by gwyman-m          #+#    #+#             */
-/*   Updated: 2019/08/30 15:13:09 by sts              ###   ########.fr       */
+/*   Updated: 2019/09/03 16:45:40 by gwyman-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdarg.h>
+# include <stdint.h>
 
 typedef struct		s_list
 {
@@ -115,20 +117,17 @@ char				*ft_strrejoin(char *s1, char *s2);
 **		ft_printf
 */
 
-#include <stdarg.h>
-#include <stdint.h>
-
 typedef struct		s_options
 {
-	int     left_side;
-	int     sign;
-	int     space;
-	int     alt_out;
-	int     zeros;
-	int     width;
-	int     prec;
-	char    *len_mod;
-	char    type;
+	int				left_side;
+	int				sign;
+	int				space;
+	int				alt_out;
+	int				zeros;
+	int				width;
+	int				prec;
+	char			*len_mod;
+	char			type;
 }					t_options;
 
 int					ft_printf(const char *format, ...);
@@ -211,6 +210,5 @@ int					print_x(uintmax_t u, t_options *opt);
 char				*ft_optstrrejoin(char *s1, char *s2, int opt);
 int					ft_atoi_binary(char *s);
 void				make_str_upper(char *s);
-
 
 #endif
