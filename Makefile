@@ -6,7 +6,7 @@
 #    By: gwyman-m <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/02 17:48:56 by gwyman-m          #+#    #+#              #
-#    Updated: 2019/09/04 01:43:46 by sts              ###   ########.fr        #
+#    Updated: 2019/09/04 01:51:35 by sts              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,18 +53,18 @@ all: $(NAME)
 $(NAME): $(OFILES)
 	@ar rc libft.a $(OFILES)
 	@ranlib libft.a
-	@echo "\033[0;32mlibft.a is ready"
+	@echo "\033[0;32mlibft.a is ready\033[0m"
 
 $(OFILES): $(CFILES) $(HEADER)
 	@gcc $(FLAGS) $(CFILES)
-	@echo "\033[0;32mcompiling files"
+	@echo "\033[0;34mcompiling files\033[0m"
 
 clean:
 	@rm -f $(OFILES)
-	@echo "\033[0;32mthe libft directory is cleaned"
+	@echo "\033[0;33mthe libft directory is cleaned\033[0m"
 
 fclean: clean
 	@rm -f libft.a
-	@echo "\033[0;32mdeleted libft.a"
+	@echo "\033[0;33mdeleted libft.a\033[0m"
 
 re: fclean all
