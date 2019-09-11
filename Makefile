@@ -6,7 +6,7 @@
 #    By: gwyman-m <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/02 17:48:56 by gwyman-m          #+#    #+#              #
-#    Updated: 2019/09/04 01:51:35 by sts              ###   ########.fr        #
+#    Updated: 2019/09/11 21:05:25 by gwyman-m         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,18 +46,26 @@ PRINTFSRC = $(addprefix $(PRINTFSRC_DIR),$(CPRINTF))
 
 CFILES = $(PRINTFSRC) $(LIBFTSRC)
 
-OFILES = $(CLIBFT:%.c=%.o) $(CPRINTF:%.c=%.o)
+OFILES = $(LIBFTSRC:%.c=%.o) $(PRINTFSRC:%.c=%.o)
+
+VPATH := printfsrc:libsrc
 
 all: $(NAME)
 
 $(NAME): $(OFILES)
 	@ar rc libft.a $(OFILES)
 	@ranlib libft.a
-	@echo "\033[0;32mlibft.a is ready\033[0m"
+	@echo "\n\033[0;32mlibft.a is ready\033[0m"
 
-$(OFILES): $(CFILES) $(HEADER)
-	@gcc $(FLAGS) $(CFILES)
-	@echo "\033[0;34mcompiling files\033[0m"
+libsrc/%.o: %.c $(HEADER)
+	@gcc -c $(FLAGS) $< -o $@
+	@printf "\033[0;34mcompiling $<\033[0m\033\r"
+	@printf "                                 \r"
+
+printfsrc/%.o: %.c $(HEADER)
+	@gcc -c $(FLAGS) $< -o $@
+	@printf "\033[0;34mcompiling $<\033[0m\033\r"
+	@printf "                                 \r"
 
 clean:
 	@rm -f $(OFILES)
