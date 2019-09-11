@@ -6,7 +6,7 @@
 /*   By: gwyman-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/19 17:20:45 by gwyman-m          #+#    #+#             */
-/*   Updated: 2019/09/03 16:43:32 by gwyman-m         ###   ########.fr       */
+/*   Updated: 2019/09/11 15:15:09 by gwyman-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ static int		move_line(char **s, size_t i)
 	return (1);
 }
 
-static int		read_line(char **content, const int fd, int full)
+static int		r_l(char **content, const int fd, int full)
 {
 	int			r;
 	char		buffer[BUFF_SIZE + 1];
@@ -116,27 +116,27 @@ int				get_next_line(const int fd, char **line, int clean)
 {
 	static t_list	*cell;
 	long			i;
-	t_list			*current;
+	t_list			*c;
 
 	if (clean == 1)
 		return (cleaning(&cell, fd, line));
-	if (!line || (fd < 0) || (read_line(NULL, fd, 0) < 0))
+	if (!line || (fd < 0) || (r_l(NULL, fd, 0) < 0))
 		return (-1);
-	if (!(current = find_fd(fd, &cell, 0)))
+	if (!(c = find_fd(fd, &cell, 0)))
 		return (cleaning(&cell, fd, line));
-	if (!ft_strchr(current->content, '\n'))
-		if ((read_line((char**)&(current->content), fd, 1)) == -1)
-			return (cleaning(&cell, fd, line));
-	if (!ft_strlen(current->content))
+	if (!ft_strchr(c->content, '\n') && r_l((char**)&(c->content), fd, 1) == -1)
 		return (cleaning(&cell, fd, line));
-	if ((i = ft_strcpy_whilech(line, current->content, '\n')) == -1)
+	if (!ft_strlen(c->content))
 		return (cleaning(&cell, fd, line));
-	if ((size_t)i < ft_strlen(current->content))
+	*line = NULL;
+	if ((i = ft_strcpy_whilech(line, c->content, '\n')) == -1)
+		return (cleaning(&cell, fd, line));
+	if ((size_t)i < ft_strlen(c->content))
 	{
-		if ((move_line((char**)&(current->content), i)) == -1)
+		if ((move_line((char**)&(c->content), i)) == -1)
 			return (cleaning(&cell, fd, line));
 	}
 	else
-		ft_strclr(current->content);
+		ft_strclr(c->content);
 	return (1);
 }
