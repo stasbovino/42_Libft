@@ -6,7 +6,7 @@
 /*   By: gwyman-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/01 18:16:48 by gwyman-m          #+#    #+#             */
-/*   Updated: 2019/09/03 16:40:41 by gwyman-m         ###   ########.fr       */
+/*   Updated: 2019/09/11 15:50:07 by gwyman-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ static int		writeword(char const *s, char **a, size_t i, size_t len)
 	size_t	k;
 
 	k = 0;
-	if (!(a[i] = (char*)malloc(sizeof(char) * (len))))
+	if (!(a[i] = (char*)malloc(sizeof(char) * (len + 1))))
 	{
 		while (a[k])
 		{
@@ -53,7 +53,6 @@ static int		writeword(char const *s, char **a, size_t i, size_t len)
 		free(a);
 		return (0);
 	}
-	k = 0;
 	while (s[k] && k < len)
 	{
 		a[i][k] = s[k];
