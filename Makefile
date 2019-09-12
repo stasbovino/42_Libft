@@ -6,7 +6,7 @@
 #    By: gwyman-m <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/02 17:48:56 by gwyman-m          #+#    #+#              #
-#    Updated: 2019/09/11 21:05:25 by gwyman-m         ###   ########.fr        #
+#    Updated: 2019/09/12 13:02:08 by gwyman-m         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,16 +55,17 @@ all: $(NAME)
 $(NAME): $(OFILES)
 	@ar rc libft.a $(OFILES)
 	@ranlib libft.a
-	@echo "\n\033[0;32mlibft.a is ready\033[0m"
+	@printf "\r\033[0;32m.o files are ready                      \033[0m\n"
+	@printf "\e[?25h\033[0;32mlibft.a is ready\033[0m\n"
 
 libsrc/%.o: %.c $(HEADER)
 	@gcc -c $(FLAGS) $< -o $@
-	@printf "\033[0;34mcompiling $<\033[0m\033\r"
+	@printf "\e[?25l\033[0;34mcompiling $<\033[0m\033\r"
 	@printf "                                 \r"
 
 printfsrc/%.o: %.c $(HEADER)
 	@gcc -c $(FLAGS) $< -o $@
-	@printf "\033[0;34mcompiling $<\033[0m\033\r"
+	@printf "\e[?25l\033[0;34mcompiling $<\033[0m\033\r"
 	@printf "                                 \r"
 
 clean:
