@@ -1,6 +1,6 @@
 # libft
 Libft is a library of C functions that I use for other projects.\
-Most of these are recode of functions from standard C-libraries.\
+Most of these are recode of functions from standard C-libraries.
 ### Among them:
 ft_str* - for strings\
 ft_lst* - for lists\
