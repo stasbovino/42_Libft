@@ -6,19 +6,21 @@
 #    By: gwyman-m <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/02 17:48:56 by gwyman-m          #+#    #+#              #
-#    Updated: 2019/09/12 13:02:08 by gwyman-m         ###   ########.fr        #
+#    Updated: 2019/09/27 20:46:25 by gwyman-m         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME=libft.a
 
+PRINTFSRC_DIR = printfsrc/
+
+LIBFTSRC_DIR = libsrc/
+
 FLAGS = -Wall -Wextra -Werror -c -I.
 
 HEADER = libft.h
 
-PRINTFSRC_DIR=printfsrc/
-
-LIBFTSRC_DIR=libsrc/
+HEADER_PRINTF = ft_printf.h
 
 CLIBFT= ft_atoi.c ft_bzero.c ft_countchars.c ft_countwords.c ft_create_coords.c \
 		ft_get_coords.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_islower.c \
@@ -63,7 +65,7 @@ libsrc/%.o: %.c $(HEADER)
 	@printf "\e[?25l\033[0;34mcompiling $<\033[0m\033\r"
 	@printf "                                 \r"
 
-printfsrc/%.o: %.c $(HEADER)
+printfsrc/%.o: %.c $(HEADER_PRINTF)
 	@gcc -c $(FLAGS) $< -o $@
 	@printf "\e[?25l\033[0;34mcompiling $<\033[0m\033\r"
 	@printf "                                 \r"

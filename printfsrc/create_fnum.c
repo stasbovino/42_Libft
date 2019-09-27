@@ -6,11 +6,11 @@
 /*   By: gwyman-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/15 18:28:15 by gwyman-m          #+#    #+#             */
-/*   Updated: 2019/08/20 14:33:50 by gwyman-m         ###   ########.fr       */
+/*   Updated: 2019/09/27 20:37:07 by gwyman-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
 char	*mant_double(char *mant, char *num, int denorm, int dcase)
 {

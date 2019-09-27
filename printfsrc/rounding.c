@@ -6,11 +6,11 @@
 /*   By: gwyman-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/15 13:09:59 by gwyman-m          #+#    #+#             */
-/*   Updated: 2019/08/20 14:35:51 by gwyman-m         ###   ########.fr       */
+/*   Updated: 2019/09/27 20:39:19 by gwyman-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
 static char	*check_intpart(char *n, char *num, int *i)
 {

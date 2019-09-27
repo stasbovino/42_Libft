@@ -6,11 +6,11 @@
 /*   By: gwyman-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/11 19:32:17 by gwyman-m          #+#    #+#             */
-/*   Updated: 2019/08/20 14:35:29 by gwyman-m         ###   ########.fr       */
+/*   Updated: 2019/09/27 20:38:57 by gwyman-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
 static char	*create_output(char *cut,
 		t_options *opt, int width, int len)

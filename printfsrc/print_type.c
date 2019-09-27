@@ -6,11 +6,11 @@
 /*   By: gwyman-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/11 19:32:53 by gwyman-m          #+#    #+#             */
-/*   Updated: 2019/08/20 14:35:33 by gwyman-m         ###   ########.fr       */
+/*   Updated: 2019/09/27 20:39:01 by gwyman-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
 int	count_and_free(char *buff)
 {
