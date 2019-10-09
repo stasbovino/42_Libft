@@ -6,7 +6,7 @@
 #    By: gwyman-m <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/02 17:48:56 by gwyman-m          #+#    #+#              #
-#    Updated: 2019/09/27 20:46:25 by gwyman-m         ###   ########.fr        #
+#    Updated: 2019/10/09 21:20:36 by gwyman-m         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ PRINTFSRC_DIR = printfsrc/
 
 LIBFTSRC_DIR = libsrc/
 
-FLAGS = -Wall -Wextra -Werror -c -I.
+FLAGS = -march=native -O2 -Wall -Wextra -Werror -c -I.
 
 HEADER = libft.h
 

@@ -6,7 +6,7 @@
 /*   By: gwyman-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/01 20:47:47 by gwyman-m          #+#    #+#             */
-/*   Updated: 2018/12/12 00:31:16 by gwyman-m         ###   ########.fr       */
+/*   Updated: 2019/10/09 21:20:15 by gwyman-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,6 @@ void	ft_putstr(char const *s)
 	i = 0;
 	if (!s)
 		return ;
-	while (s[i])
-	{
-		ft_putchar(s[i]);
-		i++;
-	}
+	i = ft_strlen(s);
+	write(1, s, i);
 }
