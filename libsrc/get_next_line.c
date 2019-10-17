@@ -6,7 +6,7 @@
 /*   By: gwyman-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/19 17:20:45 by gwyman-m          #+#    #+#             */
-/*   Updated: 2019/09/11 15:15:09 by gwyman-m         ###   ########.fr       */
+/*   Updated: 2019/10/17 17:38:51 by gwyman-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,12 +103,10 @@ static int		cleaning(t_list **cell, const int fd, char **line)
 	else
 		*cell = NULL;
 	free(tmp);
-	if (len == 0 && line)
-	{
+	if (line && *line)
 		free(*line);
-		line = NULL;
+	if (len == 0)
 		return (0);
-	}
 	return (-1);
 }
 
@@ -119,18 +117,18 @@ int				get_next_line(const int fd, char **line, int clean)
 	t_list			*c;
 
 	if (clean == 1)
-		return (cleaning(&cell, fd, line));
+		return (cleaning(&cell, fd, NULL));
 	if (!line || (fd < 0) || (r_l(NULL, fd, 0) < 0))
 		return (-1);
 	if (!(c = find_fd(fd, &cell, 0)))
-		return (cleaning(&cell, fd, line));
+		return (cleaning(&cell, fd, NULL));
 	if (!ft_strchr(c->content, '\n') && r_l((char**)&(c->content), fd, 1) == -1)
-		return (cleaning(&cell, fd, line));
+		return (cleaning(&cell, fd, NULL));
 	if (!ft_strlen(c->content))
-		return (cleaning(&cell, fd, line));
+		return (cleaning(&cell, fd, NULL));
 	*line = NULL;
 	if ((i = ft_strcpy_whilech(line, c->content, '\n')) == -1)
-		return (cleaning(&cell, fd, line));
+		return (cleaning(&cell, fd, NULL));
 	if ((size_t)i < ft_strlen(c->content))
 	{
 		if ((move_line((char**)&(c->content), i)) == -1)
