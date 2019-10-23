@@ -6,7 +6,7 @@
 /*   By: gwyman-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/11 19:27:11 by gwyman-m          #+#    #+#             */
-/*   Updated: 2019/09/27 20:38:08 by gwyman-m         ###   ########.fr       */
+/*   Updated: 2019/10/23 20:37:54 by sts              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,14 @@ static t_options	*create_opt_strct(void)
 	return (new);
 }
 
+void				wdcd(int *dst, va_list *args, size_t *inc, int opt)
+{
+	*dst = va_arg(*args, int);
+	*inc += 1;
+	if (opt == 1)
+		*inc += 1;
+}
+
 int					prepare_opt(char *format, size_t *begin, va_list *args)
 {
 	size_t		i;
@@ -38,8 +46,10 @@ int					prepare_opt(char *format, size_t *begin, va_list *args)
 	opt = create_opt_strct();
 	while (flags(opt, format[i]))
 		i++;
-	define_width(format, &(opt->width), &i);
-	define_prec(format, &(opt->prec), &i);
+	format[i] == '*' ? wdcd(&(opt->width), args, &i, 0) :
+		define_width(format, &(opt->width), &i);
+	(format[i] == '.' && format[i + 1] == '*') ?
+		wdcd(&(opt->prec), args, &i, 1) : define_prec(format, &(opt->prec), &i);
 	parse_len_mod(opt, format + i);
 	if (opt->len_mod)
 		i += ft_strlen(opt->len_mod);
