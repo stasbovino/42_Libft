@@ -1,5 +1,5 @@
 # 42_Libft
-Libft is a library of C functions that I use for other projects.  
+Libft is a 42 School project, library of C functions that I use for other projects.  
 Most of these are recode of functions from standard C-libraries.  
 
 ### Among them:
