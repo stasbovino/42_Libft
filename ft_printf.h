@@ -6,7 +6,7 @@
 /*   By: gwyman-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/27 20:20:49 by gwyman-m          #+#    #+#             */
-/*   Updated: 2019/09/27 20:24:50 by gwyman-m         ###   ########.fr       */
+/*   Updated: 2019/11/05 17:16:25 by gwyman-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,8 @@ int					print_type(t_options *opt, va_list *args);
 **      func for 's' conv
 */
 
-void				define_width(char *format, int *width, size_t *i);
+void				define_width(char *format, int *width,
+		size_t *i, va_list *args);
 void				define_prec(char *format, int *prec, size_t *i);
 int					flags(t_options *opt, char c);
 int					parse_type(t_options *opt, char c);

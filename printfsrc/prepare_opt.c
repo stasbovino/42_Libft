@@ -6,7 +6,7 @@
 /*   By: gwyman-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/11 19:27:11 by gwyman-m          #+#    #+#             */
-/*   Updated: 2019/09/27 20:38:08 by gwyman-m         ###   ########.fr       */
+/*   Updated: 2019/11/05 17:11:11 by gwyman-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int					prepare_opt(char *format, size_t *begin, va_list *args)
 	opt = create_opt_strct();
 	while (flags(opt, format[i]))
 		i++;
-	define_width(format, &(opt->width), &i);
+	define_width(format, &(opt->width), &i, args);
 	define_prec(format, &(opt->prec), &i);
 	parse_len_mod(opt, format + i);
 	if (opt->len_mod)

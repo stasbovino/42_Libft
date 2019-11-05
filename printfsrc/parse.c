@@ -6,7 +6,7 @@
 /*   By: gwyman-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/11 19:25:25 by gwyman-m          #+#    #+#             */
-/*   Updated: 2019/09/27 20:38:04 by gwyman-m         ###   ########.fr       */
+/*   Updated: 2019/11/05 17:19:15 by gwyman-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,8 +76,14 @@ void	parse_len_mod(t_options *opt, char *format)
 	return ;
 }
 
-void	define_width(char *format, int *width, size_t *i)
+void	define_width(char *format, int *width, size_t *i, va_list *args)
 {
+	if (format[(*i)] == '*')
+	{
+		*width = va_arg(*args, int);
+		(*i)++;
+		return ;
+	}
 	if (ft_isdigit(format[(*i)]))
 	{
 		*width = ft_atoi(format + *i);
