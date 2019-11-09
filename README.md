@@ -10,3 +10,6 @@ ft_is* - for checking char
 ft_atoi and ft_itoa - my implementation of atoi and itoa functions  
 get_next_line - for read line by line from file descriptor   
 ft_printf - my implementation of printf function   
+
+#### Usage:
+`make`
